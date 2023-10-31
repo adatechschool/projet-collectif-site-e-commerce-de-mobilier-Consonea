@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Article from './Article';
 import MaNavbar from './Navbar';
+import Login from './Login';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <div>
       <MaNavbar />
       <Article />
+      <Login />
     </div>
 
   );
