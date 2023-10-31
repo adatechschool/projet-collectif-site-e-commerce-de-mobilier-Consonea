@@ -2,6 +2,7 @@
 import './App.css';
 import Article from './Article';
 import MaNavbar from './Navbar';
+import Basket from './basket';
 
 function App() {
 
