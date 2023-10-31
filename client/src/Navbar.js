@@ -14,7 +14,7 @@ function MaNavbar() {
         <SearchBar />
         {/* TODO Agrandir icon panier, rendre responsive / padding*/}
         <Nav.Link href="#basket"> <BsFillBasket2Fill style={{ fontSize: '1.8em', color: 'FEFAE0' }} /></Nav.Link>
-        <Nav.Link style={{ color: '#FEFAE0' }}href="./Login">Se connecter</Nav.Link>
+        <Nav.Link style={{ color: '#FEFAE0' }}href="./pages/loginRegistration">Se connecter</Nav.Link>
       </Container>
 
     </Navbar>
