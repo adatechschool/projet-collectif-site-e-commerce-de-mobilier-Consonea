@@ -1,20 +1,13 @@
-// import logo from './logo.svg';
-import './App.css';
-import Article from './Article';
-import MaNavbar from './Navbar';
-import Login from './Login';
-import Basket from './basket';
+import "./App.css";
 
+import { default as Navbar } from "./components/Navbar";
 
 function App() {
-
   return (
-    <div>
-      <MaNavbar />
-      <Article />
-      <Login />
-    </div>
+    <div style={{ backgroundColor: '#FEFAE0'}}>
 
+      <Navbar />
+    </div>
   );
 }
 
