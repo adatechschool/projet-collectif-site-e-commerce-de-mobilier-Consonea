@@ -16,7 +16,7 @@ import Basket from "./components/Basket";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <App />
+    <App className='App'/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/article" element={<DetailsArticle />} />

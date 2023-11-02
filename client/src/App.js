@@ -4,7 +4,8 @@ import { default as Navbar } from "./components/Navbar";
 
 function App() {
   return (
-    <div>
+    <div style={{ backgroundColor: '#FEFAE0'}}>
+
       <Navbar />
     </div>
   );
