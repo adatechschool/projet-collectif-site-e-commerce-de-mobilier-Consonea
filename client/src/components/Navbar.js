@@ -16,7 +16,7 @@ function NavigationBar() {
         >
           Consonéa
         </Navbar.Brand>
-        <Nav.Link as={Link} to="/profil" style={{ color: "#FEFAE0" }}>
+        <Nav.Link as={Link} to="/profile" style={{ color: "#FEFAE0" }}>
           Vendre un meuble
         </Nav.Link>
         <SearchBar />
