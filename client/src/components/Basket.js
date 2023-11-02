@@ -1,46 +1,33 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Nav } from "react-bootstrap";
 import { BsFillBasket2Fill } from "react-icons/bs";
 
-function OffCanvasExample({ name, ...props }) {
+function Basket() {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
     <>
-      <Nav.Link href="#basket">
-        {" "}
-        <BsFillBasket2Fill style={{ fontSize: "1.8em", color: "FEFAE0" }} />
-      </Nav.Link>
       <Button
-        variant="primary"
         onClick={handleShow}
-        className="me-2"
-        style={{ fontSize: "1.8em", color: "FEFAE0" }}
+        style={{backgroundColor: "#283618",border:"none"}}
       >
-        {name}
+        <BsFillBasket2Fill style={{ fontSize: "1.8em", color: "#FEFAE0" }} />
       </Button>
-      <Offcanvas show={show} onHide={handleClose} {...props}>
+      <Offcanvas show={show} onHide={handleClose} placement="end"  style={{backgroundColor: "#FEFAE0"}}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title>Purchases</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          Importer ici les articles achetés par l'utilisateurs
         </Offcanvas.Body>
       </Offcanvas>
     </>
   );
 }
 
-function Basket() {
-  return <OffCanvasExample placement={"end"} name={"end"} />;
-}
 
-//render(<Example />);
 
 export default Basket;

@@ -1,8 +1,8 @@
 import Navbar from "react-bootstrap/Navbar";
 import { Container, Nav } from "react-bootstrap";
-import { BsFillBasket2Fill } from "react-icons/bs";
 import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
+import { default as Basket } from "../components/Basket";
 
 function NavigationBar() {
   return (
@@ -21,9 +21,7 @@ function NavigationBar() {
         </Nav.Link>
         <SearchBar />
         {/* TODO Agrandir icon panier, rendre responsive / padding*/}
-        <Nav.Link>
-          <BsFillBasket2Fill style={{ fontSize: "1.8em", color: "FEFAE0" }} />
-        </Nav.Link>
+        <Basket />
         <Nav.Link as={Link} to="/login" style={{ color: "#FEFAE0" }} href="./">
           Se connecter
         </Nav.Link>
