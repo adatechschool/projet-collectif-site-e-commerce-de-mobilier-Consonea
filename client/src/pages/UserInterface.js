@@ -5,17 +5,17 @@ import AddArticle from "../components/AddArticle";
 export default function userInterface() {
     return (
         <>
-        <Container className="dflex mt-3">
+        <Container className="dflex mt-3 mb-5">
             <div>
                 <p>Merci d'avoir mis en vente les meubles suivants ! 🔥</p>
-                <ListGroup horizontal style={{overflow:"scroll"}}>
-                    <ListGroup.Item><Article /></ListGroup.Item>
-                    <ListGroup.Item><Article /></ListGroup.Item>
-                    <ListGroup.Item><Article /></ListGroup.Item>
-                    <ListGroup.Item><Article /></ListGroup.Item>
-                    <ListGroup.Item><Article /></ListGroup.Item>
-                    <ListGroup.Item><Article /></ListGroup.Item>
-                    <ListGroup.Item><Article /></ListGroup.Item>
+                <ListGroup horizontal style={{overflow:"scroll", backgroundColor:"#FEFAE0"}}>
+                    <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
+                    <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
+                    <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
+                    <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
+                    <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
+                    <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
+                    <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
                 </ListGroup>
             </div>
 
