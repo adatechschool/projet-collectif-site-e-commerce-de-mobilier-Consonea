@@ -1,9 +1,8 @@
-// import Login from "./Login";
+import Login from "../Login";
 
-// function LoginRegistration() {
-// return (
-
-//     <Login />
-// );
-// }
-// export default LoginRegistration;
+function LoginRegistration() {
+return (
+    <Login />
+);
+}
+export default LoginRegistration;
