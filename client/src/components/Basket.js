@@ -1,6 +1,8 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import { Nav } from "react-bootstrap";
+import { BsFillBasket2Fill } from "react-icons/bs";
 
 function OffCanvasExample({ name, ...props }) {
   const [show, setShow] = useState(false);
@@ -10,8 +12,16 @@ function OffCanvasExample({ name, ...props }) {
 
   return (
     <>
-    <Nav.Link href="#basket"> <BsFillBasket2Fill style={{ fontSize: '1.8em', color:'FEFAE0' }}/></Nav.Link>
-      <Button variant="primary" onClick={handleShow} className="me-2" style={{ fontSize: '1.8em', color:'FEFAE0' }}>
+      <Nav.Link href="#basket">
+        {" "}
+        <BsFillBasket2Fill style={{ fontSize: "1.8em", color: "FEFAE0" }} />
+      </Nav.Link>
+      <Button
+        variant="primary"
+        onClick={handleShow}
+        className="me-2"
+        style={{ fontSize: "1.8em", color: "FEFAE0" }}
+      >
         {name}
       </Button>
       <Offcanvas show={show} onHide={handleClose} {...props}>
@@ -28,9 +38,7 @@ function OffCanvasExample({ name, ...props }) {
 }
 
 function Basket() {
-  return (
- <OffCanvasExample placement={'end'} name={'end'} />
-  );
+  return <OffCanvasExample placement={"end"} name={"end"} />;
 }
 
 //render(<Example />);
