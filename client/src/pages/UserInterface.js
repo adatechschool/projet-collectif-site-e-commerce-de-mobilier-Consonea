@@ -1,3 +1,6 @@
+//page où les utilisateurs retrouvent les objets qu'ils ont vendus et où ils peuvent vendre un objet
+//on utilise le composant ListGroup de la librairie React-bootstrap
+
 import { Container, ListGroup } from "react-bootstrap";
 import Article from "../components/Article";
 import AddArticle from "../components/AddArticle";

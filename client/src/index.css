@@ -1,11 +1,12 @@
+/*css généré automatiquement lors de la création de projet react*/
+/*CSS pour les styles globaux qui s'appliquent à toute l'application*/
+/*on n'a pas réussi à changer la police globale*/
+
 body {
-  background-color: #FEFAE0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {

@@ -6,21 +6,19 @@ import { default as Basket } from "../components/Basket";
 
 function NavigationBar() {
   return (
-    <Navbar expand="lg" className="custom-navbar">
-      {/* ... */}
+    <Navbar expand="lg" className="custom-navbar fixed-top d-flex mb-5">
       <Container>
         <Navbar.Brand
           as={Link}
           to="/"
           style={{ color: "#FEFAE0", fontFamily: "Impact" }}
         >
-          Consonéa
+          CONSONÉA
         </Navbar.Brand>
         <Nav.Link as={Link} to="/profile" style={{ color: "#FEFAE0" }}>
           Vendre un meuble
         </Nav.Link>
         <SearchBar />
-        {/* TODO Agrandir icon panier, rendre responsive / padding*/}
         <Basket />
         <Nav.Link as={Link} to="/login" style={{ color: "#FEFAE0" }} href="./">
           Se connecter

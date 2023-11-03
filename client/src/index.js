@@ -11,9 +11,12 @@ import AdminInterface from "./pages/AdminInterface";
 import LoginAdmin from "./pages/LoginAdmin";
 import UserInterface from "./pages/UserInterface";
 import LoginRegistration from "./pages/LoginRegistration";
-import Basket from "./components/Basket";
 
+//création racine du document html qu'on retrouve dans le dossier public sur index.html
 const root = ReactDOM.createRoot(document.getElementById("root"));
+//BrowserRouter : composant de React-router-dom qui permet de naviguer d'une url à une autre de manière dynamique
+//à l'intérieur on crée toutes les urls qui seront utiles dans le projet et que l'on retrouvera dans le dossier pages
+//on appelle le composant App qui est le composant React de base
 root.render(
   <BrowserRouter>
     <App className='App'/>
