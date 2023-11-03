@@ -1,3 +1,5 @@
+//composant importé de React Boostrap à customiser
+
 import React, { useState } from 'react';
 import {
   MDBContainer,
@@ -14,16 +16,16 @@ from 'mdb-react-ui-kit';
 
 function Login() {
 
+  //création d'un state pour définir l'état du jsx
   const [justifyActive, setJustifyActive] = useState('tab1');
-  const [activeColor, setActiveColor] = useState('white');
 
+  //fonction pour modifier le state lorsque l'utilisatrice clique sur le bouton login ou le bouton register
   const handleJustifyClick = (value) => {
     if (value === justifyActive) {
       return;
     }
 
     setJustifyActive(value);
-    setActiveColor('#25402B');
     
   };
 
@@ -37,7 +39,7 @@ function Login() {
           </MDBTabsLink>
         </MDBTabsItem>
         <MDBTabsItem>
-          <MDBTabsLink onClick={() => handleJustifyClick('tab2')} active={justifyActive === 'tab2'} style={{backgroundColor: {activeColor}}}>
+          <MDBTabsLink onClick={() => handleJustifyClick('tab2')} active={justifyActive === 'tab2'}>
 
             Register
           </MDBTabsLink>
@@ -57,7 +59,7 @@ function Login() {
             <a href="!#">Forgot password?</a>
           </div>
 
-          <MDBBtn style={{backgroundColor: '#25402B',}} className="mb-4 w-100">Sign in</MDBBtn>
+          <MDBBtn style={{backgroundColor: '#25402B', border:"none"}} className="mb-4 w-100">Sign in</MDBBtn>
           <p className="text-center">Not a member? <a href="#!">Register</a></p>
 
         </MDBTabsPane>
@@ -73,7 +75,7 @@ function Login() {
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
           </div>
 
-          <MDBBtn className="mb-4 w-100">Sign up</MDBBtn>
+          <MDBBtn style={{backgroundColor: "#25402B", border:"none"}} className="mb-4 w-100">Sign up</MDBBtn>
 
         </MDBTabsPane>
 

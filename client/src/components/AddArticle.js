@@ -5,19 +5,6 @@ import Row from 'react-bootstrap/Row';
 
 function AddArticle() {
 
-    // {
-    //     "id": "1",
-    //     "nom": "table à manger",
-    //     "type": "Industriel",
-    //     "couleur": "noir",
-    //     "dimension": "18x15x20",
-    //     "image": "Photo1",
-    //     "description": "C'est un meuble que je dois vendre absolument",
-    //     "prix": 98,
-    //     "status": 1,
-    //     "quantité": 2
-    // }
-
   return (
     <Form>
     <Row className="mb-3">
