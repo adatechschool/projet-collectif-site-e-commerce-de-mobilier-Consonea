@@ -1,51 +1,46 @@
 // cette page sert d'interface pour interagir avec la base de données
 
 const mysql = require("mysql");
-
+let instance = null;
 
 const connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: '',
-    database: 'consonea',
-    port: process.env.PORT || 3000 //process.env.PORT : c'est pour lancer un port par défaut si 3000 n'est pas dispo
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "consonea",
+  port: 3000, //process.env.PORT : c'est pour lancer un port par défaut si 3000 n'est pas dispo
 });
-
 
 connection.connect((err) => {
-    if (err) {
-        return console.log("Database Connection Failed !!!", err);
-    } else {
-        console.log("connected to Database");
-    }
+  if (err) {
+    return console.log("Database Connection Failed !!!", err);
+  } else {
+    console.log("connected to Database");
+  }
 });
 
-
-// 
+//
 class DatabaseObjet {
-    static getDataObjetInstance() {
-        return instance ? instance : new DatabaseObjet();
-    } //la syntaxe ? : appelé opérateur ternaire : expression à tester ? valeur si vrai : valeur si faux. 
+  static getDatabaseObjetInstance() {
+    return instance ? instance : new DatabaseObjet();
+  } //la syntaxe ? : appelé opérateur ternaire : expression à tester ? valeur si vrai : valeur si faux.
 
-    async getAllData() {
-        try {
-            const response = await new Promise((resolve, reject) => {
-                const query = "SELECT * FROM articles;";
+  async getAllData() {
+    try {
+      const response = await new Promise((resolve, reject) => {
+        const query = "SELECT * FROM articles;";
 
-                connection.query(query, (err, results) => {
-                    if (err) reject(new Error(err.message));
-                    resolve(results);
-                })
-            });
-            console.log(response);
-            return response;
-        } catch (error) {
-            console.log(error);
-        }
+        connection.query(query, (err, results) => {
+          if (err) reject(new Error(err.message));
+          resolve(results);
+        });
+      });
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
     }
+  }
 }
 
-
-
-
-module.exports = connection;
+module.exports = DatabaseObjet;
