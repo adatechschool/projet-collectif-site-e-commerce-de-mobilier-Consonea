@@ -23,7 +23,7 @@ connection.connect((err) => {
 
 // 
 class DatabaseObjet {
-    static getDataObjetInstance() {
+    static getDatabaseObjetInstance() {
         return instance ? instance : new DatabaseObjet();
     } //la syntaxe ? : appelé opérateur ternaire : expression à tester ? valeur si vrai : valeur si faux. 
 
@@ -48,4 +48,4 @@ class DatabaseObjet {
 
 
 
-module.exports = connection;
+module.exports = DatabaseObjet;
