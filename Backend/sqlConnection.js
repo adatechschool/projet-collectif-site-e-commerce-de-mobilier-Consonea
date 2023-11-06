@@ -43,4 +43,4 @@ class DatabaseObjet {
   }
 }
 
-module.exports = DatabaseObjet;
+module.exports = connection;
