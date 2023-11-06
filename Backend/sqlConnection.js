@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
   user: "root",
   password: "",
   database: "consonea",
-  port: 3000, //process.env.PORT : c'est pour lancer un port par défaut si 3000 n'est pas dispo
+  port: process.env.PORT //: c'est pour lancer un port par défaut si 3000 n'est pas dispo
 });
 
 connection.connect((err) => {
@@ -43,4 +43,4 @@ class DatabaseObjet {
   }
 }
 
-module.exports = connection;
+module.exports = DatabaseObjet;
