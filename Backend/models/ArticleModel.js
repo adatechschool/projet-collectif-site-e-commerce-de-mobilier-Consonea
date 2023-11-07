@@ -32,6 +32,44 @@ class Article {
     return await db.execute(sql);
   }
 
+  static async updateArticle(articleId, updatedData) {
+    try {
+      const sql = `
+        UPDATE articles
+        SET 
+          name = ?,
+          type = ?,
+          colors = ?,
+          price = ?,
+          height = ?,
+          width = ?,
+          depth = ?,
+          description = ?,
+          status = ?,
+          quantity = ?
+        WHERE id = ?;`;
+
+      const values = [
+        updatedData.name,
+        updatedData.type,
+        updatedData.colors,
+        updatedData.price,
+        updatedData.height,
+        updatedData.width,
+        updatedData.depth,
+        updatedData.description,
+        updatedData.status,
+        updatedData.quantity,
+        articleId,
+      ];
+
+      await db.execute(sql, values);
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour de l'article :", error);
+      throw error;
+    }
+  }
+}
 
   static async getArticleByID(articleId) {
     const query = `SELECT * FROM articles WHERE id =${articleId}`;
@@ -75,3 +113,4 @@ class Article {
 }
 
 module.exports = Article;
+

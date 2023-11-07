@@ -1,6 +1,7 @@
 const Article = require("../models/ArticleModel");
 const express = require("express");
 const articleRouter = express.Router();
+const updateRouter = express.Router();
 
 // GET ALL ARTICLES
 articleRouter.get("", async (req, res, next) => {
@@ -13,6 +14,18 @@ articleRouter.get("", async (req, res, next) => {
   }
 });
 
+updateRouter.patch("", async (req, res, next) => {
+  try {
+    const articles = await Article.updateArticle();
+    res.status(200).json(articles[0]);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+module.exports = articleRouter;
+module.exports = updateRouter;
 
 // GET ARTICLE BY ID
 articleRouter.get("/:id", async (req, res, next) => {
@@ -24,6 +37,7 @@ articleRouter.get("/:id", async (req, res, next) => {
     console.log(error);
     next(error);
   }
+});
 
 //ADD A NEW ARTICLE
 articleRouter.post('', async (req, res, next) => {
@@ -61,3 +75,5 @@ articleRouter.post('', async (req, res, next) => {
 })
 
 module.exports = articleRouter;
+module.exports = updateRouter;
+
