@@ -8,9 +8,18 @@ import AddArticle from "../components/AddArticle";
 export default function userInterface() {
     return (
         <>
+        
         <Container className="dflex mt-3 mb-5">
+            {/* Section d'ajout de meuble à vendre */}
+            <div className="mt-5">
+                <h2>Votre meuble mérite bien une seconde vie. Mettez le en vente ici ! ♻️</h2>
+                {/* trouver comment ajouter un saut de ligne ou remonter le titre */}
+            </div>
+            <AddArticle />
+            {/* Liste des meubles déjà vendus */}
             <div>
-                <p>Merci d'avoir mis en vente les meubles suivants ! 🔥</p>
+                <h2>Merci d'avoir mis en vente les meubles suivants ! 🔥</h2>
+                {/* trouver comment ajouter un saut de ligne */}
                 <ListGroup horizontal style={{overflow:"scroll", backgroundColor:"#FEFAE0"}}>
                     <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
                     <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
@@ -21,11 +30,7 @@ export default function userInterface() {
                     <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
                 </ListGroup>
             </div>
-
-            <div className="mt-5">
-                <p>Un autre meuble à qui donner une seconde vie ? C'est ici ! ♻️</p>
-            </div>
-            <AddArticle />
+            
         </Container>
         </>
     )
