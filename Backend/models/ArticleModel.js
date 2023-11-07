@@ -32,6 +32,13 @@ class Article {
     return await db.execute(sql);
   }
 
+
+  static async getArticleByID(articleId) {
+    const query = `SELECT * FROM articles WHERE id =${articleId}`;
+    const [rows] = await db.query(query, [articleId]);
+    return rows[0];
+  }
+
   async saveArticle() {
     let sql = `
     INSERT INTO articles(
@@ -63,6 +70,7 @@ class Article {
     `;
     return await db.execute(sql);
 }
+
 
 }
 
