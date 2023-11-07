@@ -24,9 +24,6 @@ updateRouter.patch("", async (req, res, next) => {
   }
 });
 
-module.exports = articleRouter;
-module.exports = updateRouter;
-
 // GET ARTICLE BY ID
 articleRouter.get("/:id", async (req, res, next) => {
   try {
@@ -40,9 +37,10 @@ articleRouter.get("/:id", async (req, res, next) => {
 });
 
 //ADD A NEW ARTICLE
-articleRouter.post('', async (req, res, next) => {
+articleRouter.post("", async (req, res, next) => {
   try {
-    let { name,
+    let {
+      name,
       type,
       colors,
       price,
@@ -52,8 +50,10 @@ articleRouter.post('', async (req, res, next) => {
       description,
       status,
       quantity,
-      user_id } = await req.body;
-    let article = new Article(name,
+      user_id,
+    } = await req.body;
+    let article = new Article(
+      name,
       type,
       colors,
       price,
@@ -63,16 +63,14 @@ articleRouter.post('', async (req, res, next) => {
       description,
       status,
       quantity,
-      user_id);
+      user_id
+    );
     await article.saveArticle();
     res.status(200).json({ message: "article created" });
-  }
-  catch (error) {
+  } catch (error) {
     console.log(error);
     next(error);
   }
-
-})
+});
 
 module.exports = articleRouter;
-module.exports = updateRouter;
