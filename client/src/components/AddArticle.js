@@ -73,7 +73,7 @@ function AddArticle() {
           <Form.Control required type="number" min={0}/>
         </Form.Group>
       </Row>
-      <Button style={{backgroundColor: "#283618",border:"none"}} type="submit">
+      <Button className='mt-2' style={{backgroundColor: "#283618",border:"none"}} type="submit">
         Vendre !
       </Button>
     </Form>

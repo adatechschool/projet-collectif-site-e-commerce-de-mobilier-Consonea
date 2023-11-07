@@ -11,14 +11,14 @@ export default function userInterface() {
         
         <Container className="dflex mt-3 mb-5">
             {/* Section d'ajout de meuble à vendre */}
-            <div className="mt-5">
-                <h2>Votre meuble mérite bien une seconde vie. Mettez le en vente ici ! ♻️</h2>
+            <div className="mt-2 mb-5">
+                <h2 className="mb-4">Votre meuble mérite bien une seconde vie. Mettez le en vente ici ! ♻️</h2>
                 {/* trouver comment ajouter un saut de ligne ou remonter le titre */}
             </div>
             <AddArticle />
             {/* Liste des meubles déjà vendus */}
-            <div>
-                <h2>Merci d'avoir mis en vente les meubles suivants ! 🔥</h2>
+            <div className="mt-5 mb-6">
+                <h2 className="mt-5 mb-5">Merci d'avoir mis en vente les meubles suivants ! 🔥</h2>
                 {/* trouver comment ajouter un saut de ligne */}
                 <ListGroup horizontal style={{overflow:"scroll", backgroundColor:"#FEFAE0"}}>
                     <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
