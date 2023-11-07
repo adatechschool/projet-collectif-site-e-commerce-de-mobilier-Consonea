@@ -2,7 +2,7 @@ const express = require("express");
 const app = express(); // j'initialise express
 const port = 3000;
 const userRouter = require("./controllers/User");
-const articleRouter = require("./controllers/Article");
+const articleRouter = require("./controllers/ArticleController");
 
 // Définition des routes avec les routeurs
 app.use("/users", userRouter);
