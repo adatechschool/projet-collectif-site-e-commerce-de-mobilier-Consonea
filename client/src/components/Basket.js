@@ -25,7 +25,7 @@ function Basket() {
           <Offcanvas.Title>Purchases</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Importer ici les articles achetés par l'utilisateurs
+          Votre panier
         </Offcanvas.Body>
       </Offcanvas>
     </>
