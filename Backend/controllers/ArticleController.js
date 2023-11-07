@@ -1,9 +1,8 @@
-// newTea function for post tea route
-const Article = require("../models/Article");
+const Article = require("../models/ArticleModel");
 const express = require("express");
 const articleRouter = express.Router();
 
-//GET ALL ENVELOPS
+//GET ALL articles
 articleRouter.get("", async (req, res, next) => {
   try {
     const articles = await Article.getAllArticles();

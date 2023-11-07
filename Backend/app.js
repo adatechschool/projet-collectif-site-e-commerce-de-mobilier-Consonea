@@ -1,12 +1,14 @@
 const express = require("express");
 const app = express(); // j'initialise express
 const port = 3000;
-const userRouter = require("./controllers/User");
-const articleRouter = require("./controllers/Article");
+const userRouter = require("./controllers/UserController");
+const articleRouter = require("./controllers/ArticleController");
+const adminRouter = require("./controllers/AdminController");
 
 // Définition des routes avec les routeurs
 app.use("/users", userRouter);
 app.use("/articles", articleRouter);
+app.use("/admin", adminRouter);
 
 // ---------- LISTEN ----------
 app.listen(port, () => {
