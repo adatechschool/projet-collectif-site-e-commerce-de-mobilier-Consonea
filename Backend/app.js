@@ -1,15 +1,12 @@
 const express = require("express");
-
 const app = express(); // j'initialise express
-
 const port = 3000;
+const userRouter = require("./controllers/User");
+const articleRouter = require("./controllers/Article");
 
-const routes = require('./routes/User');
-
-app.use(express.json());
-
-app.use('/', routes); //to use the routes
-
+// Définition des routes avec les routeurs
+app.use("/users", userRouter);
+app.use("/articles", articleRouter);
 
 // ---------- LISTEN ----------
 app.listen(port, () => {
@@ -19,10 +16,9 @@ app.listen(port, () => {
 // est localhost, pas nécessaire de le nommer puisqu'il il est mis par défaut, puis un callback () - fonction fléchée qui sera
 // exécuté quand le serveur sera prêt à recevoir une requête
 
-
+module.exports = app;
 
 // const dataService = require("./sqlConnection");
-
 
 // // TEST: GET users name
 // app.get('/users', (req, res) => {
@@ -58,5 +54,3 @@ app.listen(port, () => {
 //   res.send("<h1>Salut le monde<h1>");
 //   // res.status(200).sendFile('index.html', {root: __dirname}); // pour envoyé un ficher entier (senfile) suite à la réquête du client
 // });
-
-

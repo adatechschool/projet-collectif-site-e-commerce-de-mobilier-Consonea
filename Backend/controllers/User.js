@@ -1,6 +1,17 @@
 // newTea function for post tea route
-const getAllUsers = (req, res, next) => {
-    res.json({message: "get all users"}); // dummy function for now
-};
+const User = require("../models/User");
+const express = require("express");
+const userRouter = express.Router();
 
-module.exports = {getAllUsers};
+//GET ALL ENVELOPS
+userRouter.get("", async (req, res, next) => {
+  try {
+    const users = await User.getAllUsers();
+    res.status(200).json(users[0]);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+module.exports = userRouter;
