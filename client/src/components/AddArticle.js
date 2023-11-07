@@ -9,19 +9,20 @@ function AddArticle() {
     <Form>
     <Row className="mb-3">
         <Form.Group as={Col} controlId="nom">
-          <Form.Label>Nom</Form.Label>
+          <Form.Label>Titre de votre article</Form.Label>
           <Form.Control required type="text" placeholder='obligatoire'/>
         </Form.Group>
         <Form.Group as={Col} controlId="type">
           <Form.Label>Type</Form.Label>
           <Form.Select defaultValue="" required>
-            <option>obligatoire</option>
-            <option>table</option>
-            <option>chaise</option>
-            <option>étagère</option>
-            <option>canapé</option>
-            <option>lit</option>
-            <option>bureau</option>
+            <option>Obligatoire</option>
+            <option>Armoire</option>
+            <option>Bureau</option>
+            <option>Canapé</option>
+            <option>Chaise</option>
+            <option>Etagère</option>
+            <option>Lit</option>
+            <option>Table</option>
           </Form.Select>
         </Form.Group>
         <Form.Group as={Col} controlId="prix">
@@ -39,15 +40,40 @@ function AddArticle() {
           <Form.Control required type="textArea" />
         </Form.Group>
         <Form.Group as={Col} controlId="couleur">
-          <Form.Label>Couleur</Form.Label>
-          <Form.Control />
+          <Form.Label>Couleur(s)</Form.Label>
+          <Form.Select defaultValue="" required>
+            <option>Obligatoire</option>
+            <option>Argent</option>
+            <option>Blanc</option>
+            <option>Bleu</option>
+            <option>Cuivre</option>
+            <option>Doré</option>
+            <option>Gris</option>
+            <option>Marron</option>
+            <option>Noir</option>
+            <option>Orange</option>
+            <option>Rouge</option>
+            <option>Rose</option>
+            <option>Violet</option>
+            <option>Vert</option>
+            <option>Multicolor</option>
+            <option>Transparent</option>
+          </Form.Select>
         </Form.Group>
-        <Form.Group as={Col} controlId="dimensions">
-          <Form.Label>Dimensions</Form.Label>
-          <Form.Control />
+        <Form.Group as={Col} controlId="largeur">
+          <Form.Label>Largeur (en cm)</Form.Label>
+          <Form.Control required type="number" min={0}/>
+        </Form.Group>
+        <Form.Group as={Col} controlId="longueur">
+          <Form.Label>Longueur (en cm)</Form.Label>
+          <Form.Control required type="number" min={0}/>
+        </Form.Group>
+        <Form.Group as={Col} controlId="profondeur">
+          <Form.Label>Profondeur (en cm)</Form.Label>
+          <Form.Control required type="number" min={0}/>
         </Form.Group>
       </Row>
-      <Button style={{backgroundColor: "#283618",border:"none"}} type="submit">
+      <Button className='mt-2' style={{backgroundColor: "#283618",border:"none"}} type="submit">
         Vendre !
       </Button>
     </Form>
