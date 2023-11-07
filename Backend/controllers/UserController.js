@@ -1,5 +1,5 @@
 // newTea function for post tea route
-const User = require("../models/User");
+const User = require("../models/UserModel");
 const express = require("express");
 const userRouter = express.Router();
 
