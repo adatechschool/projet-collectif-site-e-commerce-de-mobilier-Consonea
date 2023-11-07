@@ -74,6 +74,7 @@ CREATE TABLE `articles` (
 LOCK TABLES `articles` WRITE;
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
 INSERT INTO `articles` VALUES (1,'armoire ancienne','armoire','marron',150,180,70,25,'vieille armoire cherche maison à habiller',1,1,1);
+INSERT INTO `articles` VALUES (2,'table neuve','table','bleu',100,200,50,40,'table cherche maison à habiller',1,1,1);
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
