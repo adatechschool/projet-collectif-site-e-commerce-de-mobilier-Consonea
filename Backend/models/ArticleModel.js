@@ -71,4 +71,46 @@ class Article {
   }
 }
 
+  static async getArticleByID(articleId) {
+    const query = `SELECT * FROM articles WHERE id =${articleId}`;
+    const [rows] = await db.query(query, [articleId]);
+    return rows[0];
+  }
+
+  async saveArticle() {
+    let sql = `
+    INSERT INTO articles(
+      name,
+      type,
+      colors,
+      price,
+      height,
+      width,
+      depth,
+      description,
+      status,
+      quantity,
+      user_id
+    )
+    VALUES(
+        '${this.name}',
+        '${this.type}',
+        '${this.colors}',
+        '${this.price}',
+        '${this.height}',
+        '${this.width}',
+        '${this.depth}',
+        '${this.description}',
+        '${this.status}',
+        '${this.quantity}',
+        '${this.user_id}'
+    )
+    `;
+    return await db.execute(sql);
+}
+
+
+}
+
 module.exports = Article;
+
