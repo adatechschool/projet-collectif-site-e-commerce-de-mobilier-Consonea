@@ -5,6 +5,7 @@ const app = express(); // j'initialise express
 const port = 3000;
 const userRouter = require("./controllers/UserController");
 const articleRouter = require("./controllers/ArticleController");
+const adminRouter = require("./controllers/AdminController");
 
 // on utilise bodyparser et on applique la méthode json pour formater le body au format json
 app.use(bodyparser.json());
@@ -12,6 +13,7 @@ app.use(bodyparser.json());
 // Définition des routes avec les routeurs
 app.use("/users", userRouter);
 app.use("/articles", articleRouter);
+app.use("/admin", adminRouter);
 
 // ---------- LISTEN ----------
 app.listen(port, () => {

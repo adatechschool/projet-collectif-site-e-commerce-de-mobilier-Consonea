@@ -1,9 +1,8 @@
-// newTea function for post tea route
 const User = require("../models/UserModel");
 const express = require("express");
 const userRouter = express.Router();
 
-//GET ALL ENVELOPS
+//GET ALL users
 userRouter.get("", async (req, res, next) => {
   try {
     const users = await User.getAllUsers();

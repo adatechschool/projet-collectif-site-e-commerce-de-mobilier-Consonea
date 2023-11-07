@@ -69,7 +69,6 @@ class Article {
       throw error;
     }
   }
-}
 
   static async getArticleByID(articleId) {
     const query = `SELECT * FROM articles WHERE id =${articleId}`;
@@ -113,4 +112,3 @@ class Article {
 }
 
 module.exports = Article;
-

@@ -76,4 +76,3 @@ articleRouter.post('', async (req, res, next) => {
 
 module.exports = articleRouter;
 module.exports = updateRouter;
-
