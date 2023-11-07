@@ -1,4 +1,3 @@
-
 -- MySQL dump 10.13  Distrib 8.0.35, for Linux (x86_64)
 --
 -- Host: localhost    Database: consonea
@@ -75,6 +74,7 @@ CREATE TABLE `articles` (
 LOCK TABLES `articles` WRITE;
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
 INSERT INTO `articles` VALUES (1,'armoire ancienne','armoire','marron',150,180,70,25,'vieille armoire cherche maison à habiller',1,1,1);
+INSERT INTO `articles` VALUES (2,'table neuve','table','bleu',100,200,50,40,'table cherche maison à habiller',1,1,1);
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,6 +89,7 @@ CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `first_name` varchar(100) DEFAULT NULL,
   `last_name` varchar(100) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -102,7 +103,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Brigitte','Random','bibi@gmail.com','1234');
+INSERT INTO `users` VALUES (1,'Brigitte','Random','Bribri','bibi@gmail.com','1234');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -115,4 +116,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-02 17:47:27
+-- Dump completed on 2023-11-07 12:11:13
