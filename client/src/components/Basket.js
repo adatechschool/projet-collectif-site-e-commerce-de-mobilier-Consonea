@@ -22,10 +22,10 @@ function Basket() {
       {/* ici on utilise des Offcanvas, composants React qui surgissent au premier plan lorsque on clique sur un bouton */}
       <Offcanvas show={show} onHide={handleClose} placement="end"  style={{backgroundColor: "#FEFAE0"}}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Purchases</Offcanvas.Title>
+          <Offcanvas.Title>Votre panier</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Votre panier
+          Articles mis dans le panier du/de la client.e
         </Offcanvas.Body>
       </Offcanvas>
     </>
