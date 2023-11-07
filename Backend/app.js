@@ -3,8 +3,8 @@ const express = require("express");
 const bodyparser = require('body-parser');
 const app = express(); // j'initialise express
 const port = 3000;
-const userRouter = require("./controllers/User");
-const articleRouter = require("./controllers/Article");
+const userRouter = require("./controllers/UserController");
+const articleRouter = require("./controllers/ArticleController");
 
 // on utilise bodyparser et on applique la méthode json pour formater le body au format json
 app.use(bodyparser.json());
