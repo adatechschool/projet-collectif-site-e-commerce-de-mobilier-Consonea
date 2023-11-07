@@ -31,6 +31,39 @@ class Article {
     let sql = `SELECT * FROM articles;`;
     return await db.execute(sql);
   }
+
+  async saveArticle() {
+    let sql = `
+    INSERT INTO articles(
+      name,
+      type,
+      colors,
+      price,
+      height,
+      width,
+      depth,
+      description,
+      status,
+      quantity,
+      user_id
+    )
+    VALUES(
+        '${this.name}',
+        '${this.type}',
+        '${this.colors}',
+        '${this.price}',
+        '${this.height}',
+        '${this.width}',
+        '${this.depth}',
+        '${this.description}',
+        '${this.status}',
+        '${this.quantity}',
+        '${this.user_id}'
+    )
+    `;
+    return await db.execute(sql);
+}
+
 }
 
 module.exports = Article;
