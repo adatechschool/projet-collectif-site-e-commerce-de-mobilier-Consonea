@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.35, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.1.0, for macos13.3 (arm64)
 --
 -- Host: localhost    Database: consonea
 -- ------------------------------------------------------
--- Server version	8.0.35-0ubuntu0.22.04.1
+-- Server version	8.1.0
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -64,7 +64,7 @@ CREATE TABLE `articles` (
   `quantity` int NOT NULL,
   `user_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,8 +73,7 @@ CREATE TABLE `articles` (
 
 LOCK TABLES `articles` WRITE;
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
-INSERT INTO `articles` VALUES (1,'armoire ancienne','armoire','marron',150,180,70,25,'vieille armoire cherche maison à habiller',1,1,1);
-INSERT INTO `articles` VALUES (2,'table neuve','table','bleu',100,200,50,40,'table cherche maison à habiller',1,1,1);
+INSERT INTO `articles` VALUES (1,'armoire ancienne','armoire','marron',150,180,70,25,'vieille armoire cherche maison à habiller',1,1,1),(2,'table neuve','table','bleu',100,200,50,40,'table cherche maison à habiller',1,1,1),(3,'canapé','table','bleu',200,50,200,100,'canapé cherche salon pour chiller',0,3,1);
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +93,7 @@ CREATE TABLE `users` (
   `password` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +102,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Brigitte','Random','Bribri','bibi@gmail.com','1234');
+INSERT INTO `users` VALUES (1,'Brigitte','Random','Bribri','bibi@gmail.com','1234'),(2,'michel','delpech','michpech','michpech@gmail.com','michpech');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -116,4 +115,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-07 12:11:13
+-- Dump completed on 2023-11-08 14:03:50
