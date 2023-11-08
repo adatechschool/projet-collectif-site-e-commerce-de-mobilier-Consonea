@@ -20,6 +20,7 @@ function NavigationBar() {
         </Nav.Link>
         <SearchBar />
         <Basket />
+        {/* potentiel emplacement pour l'appel API user */}
         <Nav.Link as={Link} to="/login" style={{ color: "#FEFAE0" }} href="./">
           Se connecter
         </Nav.Link>

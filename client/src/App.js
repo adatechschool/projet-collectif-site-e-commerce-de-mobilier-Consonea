@@ -10,6 +10,7 @@ function App() {
     <div style={{ backgroundColor: '#FEFAE0', margin: "10em"}}>
       <Navbar />
     </div>
+    
   );
 }
 
