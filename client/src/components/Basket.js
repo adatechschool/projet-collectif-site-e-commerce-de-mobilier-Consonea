@@ -12,20 +12,17 @@ function Basket() {
 
   return (
     <>
-      <Button
-        onClick={handleShow}
-        style={{backgroundColor: "#283618",border:"none"}}
-      >
+      <Button onClick={handleShow} style={{backgroundColor: "#283618",border:"none"}}>
         {/* ici on utilise un composant déjà créé de la librairie react icons */}
         <BsFillBasket2Fill style={{ fontSize: "1.8em", color: "#FEFAE0" }} />
       </Button>
       {/* ici on utilise des Offcanvas, composants React qui surgissent au premier plan lorsque on clique sur un bouton */}
       <Offcanvas show={show} onHide={handleClose} placement="end"  style={{backgroundColor: "#FEFAE0"}}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Purchases</Offcanvas.Title>
+          <Offcanvas.Title>Votre panier</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Votre panier
+          Articles mis dans le panier du/de la client.e
         </Offcanvas.Body>
       </Offcanvas>
     </>

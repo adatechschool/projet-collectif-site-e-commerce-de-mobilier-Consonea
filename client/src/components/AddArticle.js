@@ -20,6 +20,7 @@ function AddArticle() {
             <option>Bureau</option>
             <option>Canapé</option>
             <option>Chaise</option>
+            <option>Commode</option>
             <option>Etagère</option>
             <option>Lit</option>
             <option>Table</option>
@@ -27,18 +28,14 @@ function AddArticle() {
         </Form.Group>
         <Form.Group as={Col} controlId="prix">
           <Form.Label>Prix (en €)</Form.Label>
-          <Form.Control required type="number" min={0} placeholder='obligatoire'/>
+          <Form.Control required type="number" min={1} placeholder='obligatoire'/>
         </Form.Group>
         <Form.Group as={Col} controlId="quantité">
           <Form.Label>Quantité</Form.Label>
           <Form.Control placeholder="obligatoire"required type="number" min={1}/>
         </Form.Group>
       </Row>
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="description">
-          <Form.Label>Description</Form.Label>
-          <Form.Control required type="textArea" />
-        </Form.Group>
+      <Row className="mb-3"> 
         <Form.Group as={Col} controlId="couleur">
           <Form.Label>Couleur(s)</Form.Label>
           <Form.Select defaultValue="" required>
@@ -72,10 +69,13 @@ function AddArticle() {
           <Form.Label>Profondeur (en cm)</Form.Label>
           <Form.Control required type="number" min={0}/>
         </Form.Group>
+        <Row className="mb-3"></Row>
+        <Form.Group as={Col} controlId="description">
+          <Form.Label>Description</Form.Label>
+          <Form.Control required type="textArea" />
+        </Form.Group>
       </Row>
-      <Button className='mt-2' style={{backgroundColor: "#283618",border:"none"}} type="submit">
-        Vendre !
-      </Button>
+      <Button variant="success" className='mt-4' type="submit">Mettre en vente !</Button>{' '}
     </Form>
   );
 }

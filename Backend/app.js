@@ -2,6 +2,7 @@ const express = require("express");
 //body-parser extrait le body d'une requete et l'enregiste dans req.body
 const bodyparser = require('body-parser');
 const app = express(); // j'initialise express
+
 const port = 5500;
 const userRouter = require("./controllers/UserController");
 const articleRouter = require("./controllers/ArticleController");
@@ -9,6 +10,7 @@ const adminRouter = require("./controllers/AdminController");
 
 // on utilise bodyparser et on applique la méthode json pour formater le body au format json
 app.use(bodyparser.json());
+
 
 // Définition des routes avec les routeurs
 app.use("/users", userRouter);
