@@ -9,3 +9,19 @@
 .custom-navbar {
   background-color: #283618;
 }
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: rgb(37, 64, 43);
+} 
+
+.nav-link {
+  color:black;
+}
+
+.nav-link :after {
+  color:black;
+}
+
+.nav {
+  --bs-nav-link-hover-color: rgb(37, 64, 43);
+}
