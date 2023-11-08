@@ -40,6 +40,11 @@ class User {
     return await db.execute(sql);
 }
 
+static async deleteUserByID(id) {
+  const query = `DELETE FROM users WHERE id = ${id}`;
+  await db.query(query,[id]);
+} 
+
 }
 
 module.exports = User;
