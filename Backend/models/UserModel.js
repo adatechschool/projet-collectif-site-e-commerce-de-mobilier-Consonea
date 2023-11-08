@@ -13,6 +13,33 @@ class User {
     let sql = `SELECT * FROM users;`;
     return await db.execute(sql);
   }
+
+  static async getUserByID(userId) {
+    const query = `SELECT * FROM users WHERE id =${userId}`;
+    const [rows] = await db.query(query, [userId]);
+    return rows[0];
+  }
+
+  async saveUser() {
+    let sql = `
+    INSERT INTO users(
+      first_name,
+      last_name,
+      username,
+      email,
+      password
+    )
+    VALUES(
+        '${this.first_name}',
+        '${this.last_name}',
+        '${this.username}',
+        '${this.email}',
+        '${this.password}'
+    )
+    `;
+    return await db.execute(sql);
+}
+
 }
 
 module.exports = User;
