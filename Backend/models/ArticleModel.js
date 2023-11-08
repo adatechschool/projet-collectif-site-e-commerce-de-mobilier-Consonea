@@ -63,6 +63,12 @@ class Article {
     return rows[0];
   }
 
+  static async getArticleByType(articleType) {
+    const query = `SELECT * FROM articles WHERE type ='${articleType}'`;
+    const [rows] = await db.query(query, [articleType]);
+    return rows[0];
+  }
+
   async saveArticle() {
     let sql = `
     INSERT INTO articles(

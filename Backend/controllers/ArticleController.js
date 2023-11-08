@@ -35,6 +35,18 @@ articleRouter.get("/:id", async (req, res, next) => {
   }
 });
 
+// GET ARTICLE BY TYPE
+articleRouter.get("/type/:type", async (req, res, next) => {
+  try {
+    let type = req.params["type"];
+    const articleByType = await Article.getArticleByType(type);
+    res.status(200).json(articleByType);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
 // ADD A NEW ARTICLE
 articleRouter.post("", async (req, res, next) => {
   try {
