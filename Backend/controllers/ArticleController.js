@@ -36,7 +36,7 @@ articleRouter.get("/:id", async (req, res, next) => {
   }
 });
 
-//ADD A NEW ARTICLE
+// ADD A NEW ARTICLE
 articleRouter.post("", async (req, res, next) => {
   try {
     let {
@@ -67,6 +67,18 @@ articleRouter.post("", async (req, res, next) => {
     );
     await article.saveArticle();
     res.status(200).json({ message: "article created" });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+// DELETE AN ARTICLE
+articleRouter.delete("/:id", async (req, res, next) => {
+  try {
+    let id = req.params["id"];
+    await Article.deleteArticleByID(id);
+    res.status(200).json({ message: "Article deleted successfully" });
   } catch (error) {
     console.log(error);
     next(error);

@@ -108,6 +108,11 @@ class Article {
     return await db.execute(sql);
 }
 
+static async deleteArticleByID(id) {
+    const query = `DELETE FROM articles WHERE id = ${id}`;
+    await db.query(query,[id]);
+  } 
+
 
 }
 
