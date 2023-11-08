@@ -1,7 +1,6 @@
 const Article = require("../models/ArticleModel");
 const express = require("express");
 const articleRouter = express.Router();
-const updateRouter = express.Router();
 
 // GET ALL ARTICLES
 articleRouter.get("", async (req, res, next) => {
@@ -14,10 +13,10 @@ articleRouter.get("", async (req, res, next) => {
   }
 });
 
-updateRouter.patch("", async (req, res, next) => {
+articleRouter.patch("/:id", async (req, res, next) => {
   try {
-    const articles = await Article.updateArticle();
-    res.status(200).json(articles[0]);
+    await Article.updateArticle(req.params["id"],req.body);
+    res.status(200).json({ message: "article updated" });
   } catch (error) {
     console.log(error);
     next(error);
