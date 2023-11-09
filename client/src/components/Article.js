@@ -2,8 +2,8 @@
 import { Card, Button } from 'react-bootstrap';
 import tableBasse from '../images/tableBasse.jpg';
 import { BsFillBasket2Fill } from "react-icons/bs";
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Link } from "react-router-dom";
 
 
 function Article({ propsArticle }) {
@@ -21,6 +21,7 @@ function Article({ propsArticle }) {
     fontFamily: 'Helvetica',
   };
 
+  const url = `/article/${propsArticle.id}`
   return (
     <Col>
     <Card style={cardStyle}>
@@ -30,7 +31,8 @@ function Article({ propsArticle }) {
         <Card.Text style={{fontWeight:'bold',color:"#25402B"}}>{propsArticle.price}€</Card.Text>
         <Card.Text style={{color:"#25402B"}}>{propsArticle.description}</Card.Text>
         
-        <Button variant="outline-success">Voir plus</Button>{' '}
+        <Button as={Link} to={url} variant="outline-success">Voir plus</Button>{' '}
+
         {/* <Button style={buttonStyle}>Voir plus</Button> */}
         <Button variant="success"><BsFillBasket2Fill style={{ fontSize: "1.2em"}}  /></Button>{' '}
       </Card.Body>
@@ -38,5 +40,6 @@ function Article({ propsArticle }) {
 </Col>
   );
 }
+
 
 export default Article;

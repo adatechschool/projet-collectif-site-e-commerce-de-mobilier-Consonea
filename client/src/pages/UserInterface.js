@@ -15,12 +15,12 @@ export default function userInterface() {
                 <h2 className="mb-4">Votre meuble mérite bien une seconde vie. Mettez le en vente ici ! ♻️</h2>
                 {/* trouver comment ajouter un saut de ligne ou remonter le titre */}
             </div>
-            <AddArticle />
+             <AddArticle />
             {/* Liste des meubles déjà vendus */}
-            <div className="mt-5 mb-6">
+            {/* <div className="mt-5 mb-6">
                 <h2 className="mt-5 mb-5">Merci d'avoir mis en vente les meubles suivants ! 🔥</h2>
                 {/* trouver comment ajouter un saut de ligne */}
-                <ListGroup horizontal style={{overflow:"scroll", backgroundColor:"#FEFAE0"}}>
+                {/* <ListGroup horizontal style={{overflow:"scroll", backgroundColor:"#FEFAE0"}}>
                     <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
                     <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
                     <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
@@ -29,8 +29,8 @@ export default function userInterface() {
                     <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
                     <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article /></ListGroup.Item>
                 </ListGroup>
-            </div>
-            
+            </div> */}
+             
         </Container>
         </>
     )

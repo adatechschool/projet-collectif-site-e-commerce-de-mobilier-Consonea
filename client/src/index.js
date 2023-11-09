@@ -22,7 +22,7 @@ root.render(
     <App className='App'/>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/article" element={<DetailsArticle />} />
+      <Route path="/article/:id" element={<DetailsArticle />} />
       <Route path="/admininterface" element={<AdminInterface />} />
       <Route path="/loginadmin" element={<LoginAdmin />} />
       <Route path="/login" element={<LoginRegistration />} />
