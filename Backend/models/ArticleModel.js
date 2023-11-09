@@ -37,33 +37,20 @@ class Article {
       const sql = `
         UPDATE articles
         SET 
-          name = ?,
-          type = ?,
-          colors = ?,
-          price = ?,
-          height = ?,
-          width = ?,
-          depth = ?,
-          description = ?,
-          status = ?,
-          quantity = ?
-        WHERE id = ?;`;
+          name = '${updatedData.name}',
+          type = '${updatedData.type}',
+          colors = '${updatedData.colors}',
+          price = ${updatedData.price},
+          height = ${updatedData.height},
+          width = ${updatedData.width},
+          depth = ${updatedData.depth},
+          description = '${updatedData.description}',
+          status = ${updatedData.status},
+          quantity = ${updatedData.quantity},
+          user_id = ${updatedData.user_id}
+        WHERE id = ${articleId};`;
 
-      const values = [
-        updatedData.name,
-        updatedData.type,
-        updatedData.colors,
-        updatedData.price,
-        updatedData.height,
-        updatedData.width,
-        updatedData.depth,
-        updatedData.description,
-        updatedData.status,
-        updatedData.quantity,
-        articleId,
-      ];
-
-      await db.execute(sql, values);
+      await db.execute(sql);
     } catch (error) {
       console.error("Erreur lors de la mise à jour de l'article :", error);
       throw error;
@@ -73,6 +60,12 @@ class Article {
   static async getArticleByID(articleId) {
     const query = `SELECT * FROM articles WHERE id =${articleId}`;
     const [rows] = await db.query(query, [articleId]);
+    return rows[0];
+  }
+
+  static async getArticleByType(articleType) {
+    const query = `SELECT * FROM articles WHERE type ='${articleType}'`;
+    const [rows] = await db.query(query, [articleType]);
     return rows[0];
   }
 

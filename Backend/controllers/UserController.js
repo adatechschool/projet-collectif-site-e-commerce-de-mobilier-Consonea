@@ -50,4 +50,16 @@ userRouter.post("", async (req, res, next) => {
   }
 });
 
+// DELETE AN USER
+userRouter.delete("/:id", async (req, res, next) => {
+  try {
+    let id = req.params["id"];
+    await User.deleteUserByID(id);
+    res.status(200).json({ message: "User deleted successfully" });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
 module.exports = userRouter;
