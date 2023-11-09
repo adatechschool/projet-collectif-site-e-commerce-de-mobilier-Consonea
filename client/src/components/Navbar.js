@@ -7,6 +7,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from "react-router-dom";
 import { BiSearch } from 'react-icons/bi';
 import { InputGroup } from 'react-bootstrap';
+import { default as Basket } from "../components/Basket"
 
 function NavigationBar() {
   return (
@@ -51,9 +52,10 @@ function NavigationBar() {
                   <Nav.Link as={Link} to="/profile" style={{ color: "#FEFAE0", marginRight: "40px" }}>
                     Vendre un meuble
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/login" style={{ color: "#FEFAE0" }} href="./">
+                  <Nav.Link as={Link} to="/login" style={{ color: "#FEFAE0", marginRight: "40px" }} href="./">
                     Se connecter
                   </Nav.Link>
+                  <Basket />
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
