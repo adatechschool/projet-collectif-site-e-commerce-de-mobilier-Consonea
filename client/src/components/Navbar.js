@@ -7,8 +7,14 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from "react-router-dom";
 import { BiSearch } from 'react-icons/bi';
 import { InputGroup } from 'react-bootstrap';
+import useAuth from "./useAuth";
 
 function NavigationBar() {
+
+  //création d'un state pour savoir si un utilisateur est connecté
+  const { connectionStatus, logout } = useAuth();
+  
+
   return (
     <>
       {['lg'].map((expand) => (
@@ -51,9 +57,17 @@ function NavigationBar() {
                   <Nav.Link as={Link} to="/profile" style={{ color: "#FEFAE0", marginRight: "40px" }}>
                     Vendre un meuble
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/login" style={{ color: "#FEFAE0" }} href="./">
-                    Se connecter
-                  </Nav.Link>
+                  {connectionStatus === 0 && (
+                    <Nav.Link as={Link} to="/login" style={{ color: '#FEFAE0' }}>
+                      Se connecter
+                    </Nav.Link>
+                  )}
+
+                  {connectionStatus === 1 && (
+                    <Nav.Link as={Link} to="/login" style={{ color: '#FEFAE0' }} onClick={logout}>
+                      Se déconnecter
+                    </Nav.Link>
+                  )}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
