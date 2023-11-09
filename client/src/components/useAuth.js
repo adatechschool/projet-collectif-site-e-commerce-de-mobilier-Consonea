@@ -1,26 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 function useAuth() {
   const [connectionStatus, setConnectionStatus] = useState(0);
 
   useEffect(() => {
-    if (localStorage.getItem("user")) {
+    const user = localStorage.getItem('user');
+    if (user !== null) {
       setConnectionStatus(1);
     } else {
       setConnectionStatus(0);
     }
-  }, []);
+  }, []); // Le tableau de dépendances vide garantit que ce code ne s'exécutera qu'une seule fois après le montage du composant
 
-  const login = async (data) => {
-    // Effectuer les actions nécessaires lors de la connexion, puis mettre à jour localStorage
+  const login = (userData) => {
     setConnectionStatus(1);
-    localStorage.setItem("user", data);
+    localStorage.setItem('user', userData);
   };
 
   const logout = () => {
-    // Effectuer les actions nécessaires lors de la déconnexion, puis mettre à jour localStorage
     setConnectionStatus(0);
-    localStorage.removeItem("user");
+    localStorage.removeItem('user');
   };
 
   return { connectionStatus, login, logout };

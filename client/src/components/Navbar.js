@@ -8,14 +8,19 @@ import { Link } from "react-router-dom";
 import { BiSearch } from 'react-icons/bi';
 import { InputGroup } from 'react-bootstrap';
 import useAuth from "./useAuth";
-import { default as Basket } from "../components/Basket"
+import { default as Basket } from "../components/Basket";
+import { useState, useEffect } from 'react';
 
 
-function NavigationBar() {
+function NavigationBar( ) {
 
   //création d'un state pour savoir si un utilisateur est connecté
-  const { connectionStatus, logout } = useAuth();
-  
+  const { logout, connectionStatus} = useAuth();
+  const [isAuthenticated, setIsAuthenticated] = useState(connectionStatus);
+
+  useEffect(() => {
+    setIsAuthenticated(connectionStatus);
+  }, [connectionStatus]);
 
   return (
     <>
@@ -59,13 +64,13 @@ function NavigationBar() {
                   <Nav.Link as={Link} to="/profile" style={{ color: "#FEFAE0", marginRight: "40px" }}>
                     Vendre un meuble
                   </Nav.Link>
-                  {connectionStatus === 0 && (
+                  {isAuthenticated === 0 && (
                     <Nav.Link as={Link} to="/login" style={{ color: '#FEFAE0' }}>
                       Se connecter
                     </Nav.Link>
                   )}
 
-                  {connectionStatus === 1 && (
+                  {isAuthenticated === 1 && (
                     <Nav.Link as={Link} to="/login" style={{ color: '#FEFAE0' }} onClick={logout}>
                       Se déconnecter
                     </Nav.Link>
