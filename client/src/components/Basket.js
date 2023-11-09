@@ -22,7 +22,7 @@ function Basket() {
           <Offcanvas.Title>Votre panier</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Articles mis dans le panier du/de la client.e
+          Articles mis dans le panier du/de la client•e
         </Offcanvas.Body>
       </Offcanvas>
     </>
