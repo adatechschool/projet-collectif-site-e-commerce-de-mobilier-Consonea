@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { BiSearch } from 'react-icons/bi';
 import { InputGroup } from 'react-bootstrap';
 import useAuth from "./useAuth";
+import { default as Basket } from "../components/Basket"
+
 
 function NavigationBar() {
 
@@ -68,6 +70,7 @@ function NavigationBar() {
                       Se déconnecter
                     </Nav.Link>
                   )}
+                  <Basket />
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
