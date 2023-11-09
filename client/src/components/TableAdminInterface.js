@@ -79,7 +79,6 @@ function TableAdmin() {
       .then(json => setArticles(json))
       .catch(error => console.log('error', error));
   }, [])
-
   return (
     <>
       <h1 style={{ marginBottom: 20, marginTop: -80 }}>Interface administrateur•ice</h1>
