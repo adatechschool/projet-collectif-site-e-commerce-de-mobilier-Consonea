@@ -12,11 +12,13 @@ export default function UserInterface() {
 
 
   useEffect(() => {
+    if (localStorage.getItem("user")) {
     // Effectue une requête pour récupérer les articles depuis ta base de données
     fetch(`http://localhost:5500/articles/user/${JSON.parse(localStorage.getItem("user")).id}`)
       .then(response => response.json())
       .then(data => setArticles(data))
       .catch(error => console.error('Erreur lors de la récupération des articles:', error));
+    }
   }, []); 
 
     return (
@@ -31,7 +33,7 @@ export default function UserInterface() {
             <AddArticle />
             
             <div className="mt-5 mb-6">
-                <h2 className="mt-5 mb-5">Merci d'avoir mis en vente les meubles suivants ! 🔥</h2>
+            {localStorage.getItem("user") !== null && (<h2 className="mt-5 mb-5">Merci d'avoir mis en vente les meubles suivants ! 🔥</h2>)}
                 <ListGroup horizontal style={{overflow:"scroll", backgroundColor:"#FEFAE0"}}>
                 {articles.map(function (currentArticle) {
                     return <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article propsArticle={currentArticle} /></ListGroup.Item>
