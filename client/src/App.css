@@ -7,11 +7,11 @@
 
 /*modification de la couleur de la navbar*/
 .custom-navbar {
-  background-color: #283618;
+  background-color: #25402B;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  background-color: rgb(37, 64, 43);
+  background-color: #25402B;
 } 
 
 .nav-link {
@@ -23,5 +23,5 @@
 }
 
 .nav {
-  --bs-nav-link-hover-color: rgb(37, 64, 43);
+  --bs-nav-link-hover-color: #25402B;
 }
