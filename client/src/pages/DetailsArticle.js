@@ -24,10 +24,11 @@ import Article from "../components/Article";
 // photo de l'article + infos + acheter l'article 
 
 
-function DetailsArticle({ useParams } ) {
+function DetailsArticle( ) {
 
     //on veux faire une boucle pour récupérer les données de l'api et leur appliquer le style de card pour qu'elles s'affichent
   const [article, setArticle] = useState({});
+  let {id} = useParams();
   console.log(useParams)
 
   // var requestOptions = {
@@ -36,7 +37,7 @@ function DetailsArticle({ useParams } ) {
   // };
   useEffect(() => {
     // Effectue une requête pour récupérer les articles depuis ta base de données
-    fetch("http://localhost:5500/articles/1") // remplacer l'ID dans l'URL (voir React router)
+    fetch(`http://localhost:5500/articles/${id}`) // remplacer l'ID dans l'URL (voir React router)
       .then(response => response.json())
       .then(data => setArticle(data))
       .catch(error => console.error('Erreur lors de la récupération des articles:', error));
@@ -76,9 +77,9 @@ function DetailsArticle({ useParams } ) {
             <MDBCardText>
             {article.quantity}
             </MDBCardText>
-            <MDBCardText>
+            {/* <MDBCardText>
               Bribri
-            </MDBCardText>
+            </MDBCardText> */}
           </MDBCardBody>
         </MDBCol>
       </MDBRow> 
