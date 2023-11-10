@@ -69,6 +69,11 @@ class Article {
     return rows[0];
   }
 
+  static async getArticlesByUser(user_id) {
+    const sql = `SELECT * FROM articles WHERE user_id =${user_id}`;
+    return await db.execute(sql);
+  }
+
   async saveArticle() {
     let sql = `
     INSERT INTO articles(

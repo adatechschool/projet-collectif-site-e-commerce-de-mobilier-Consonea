@@ -25,6 +25,34 @@ userRouter.get("/:id", async (req, res, next) => {
   }
 });
 
+//LOGIN user
+userRouter.post("/login", async (req, res, next) => {
+  try {
+    let {
+      email,
+      password
+    } = await req.body;
+    const user = await User.findOne(email);
+    console.log(user);
+    console.log(password);
+
+    if (user.password !== password) {
+      return res.status(400).json({message : 'le mot de passe ne correspond pas'})
+    }
+    else {
+      return res.status(200).json({
+      id: user.id,
+      first_name : user.first_name,
+      last_name : user.last_name,
+      username : user.username,
+      email : user.email})
+    }
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
 //POST new user
 userRouter.post("", async (req, res, next) => {
   try {

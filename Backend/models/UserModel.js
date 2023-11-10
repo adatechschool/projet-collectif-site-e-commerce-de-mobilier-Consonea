@@ -20,6 +20,12 @@ class User {
     return rows[0];
   }
 
+  static async findOne(email) {
+    const sql = `SELECT * FROM users WHERE email ='${email}'`;
+    let user = await db.execute(sql);
+    return user[0][0];
+  }
+
   async saveUser() {
     let sql = `
     INSERT INTO users(

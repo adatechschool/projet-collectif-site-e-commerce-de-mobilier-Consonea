@@ -2,9 +2,7 @@
 //on pourrait y mettre le header, le footer, etc...
 
 import "./App.css";
-
 import { default as Navbar } from "./components/Navbar";
-
 // import { default as Card } from "./components/footer";
 
 function App() {
