@@ -10,6 +10,7 @@ import {
   MDBCol} from 'mdb-react-ui-kit';
   import tableBasse from '../images/tableBasse.jpg';
   import { useParams } from "react-router-dom";
+  import { BsFillBasket2Fill } from "react-icons/bs";
 
 import Article from "../components/Article";
 // import Container from 'react-bootstrap/Container';
@@ -24,61 +25,47 @@ import Article from "../components/Article";
 // photo de l'article + infos + acheter l'article 
 
 
-function DetailsArticle({ useParams } ) {
+function DetailsArticle() {
 
     //on veux faire une boucle pour récupérer les données de l'api et leur appliquer le style de card pour qu'elles s'affichent
   const [article, setArticle] = useState({});
   console.log(useParams)
-
+let {id} = useParams();
   // var requestOptions = {
   //   method: 'GET',
   //   redirect: 'follow'
   // };
   useEffect(() => {
     // Effectue une requête pour récupérer les articles depuis ta base de données
-    fetch("http://localhost:5500/articles/1") // remplacer l'ID dans l'URL (voir React router)
+    fetch(`http://localhost:5500/articles/${id}`) // remplacer l'ID dans l'URL (voir React router)
       .then(response => response.json())
       .then(data => setArticle(data))
       .catch(error => console.error('Erreur lors de la récupération des articles:', error));
   }, []); // Le tableau vide en second argument signifie que cet effet s'exécute une seule fois, équivalent à componentDidMount
 
-
-
   return (
 
-
-    <MDBCard style={{ maxWidth: '2000px' }}>
-        
-      
-      
-       <MDBRow className='g-0' >
+    <MDBCard className='d-flex align-items-center justify-content-center' style={{maxWidth: '1100px', maxHeight: '900px',backgroundColor:'#25402B', color:'#FEFAE0', margin:'auto', borderRadius:"10px"}}>
+       <MDBRow className='' >
         <MDBCol md='4'>
-          <MDBCardImage src={tableBasse} alt='...' fluid />
+          <MDBCardImage className='' style={{width:'auto', height:'auto', margin:'2em', borderRadius:'10px' }} src={tableBasse} alt='...' fluid />
         </MDBCol>
         <MDBCol md='8'>
-          <MDBCardBody>
-            <MDBCardTitle>{article.name}</MDBCardTitle>
-            <MDBCardText>
-            {article.type}
-            </MDBCardText>
-            <MDBCardText>
-            {article.colors}
-            </MDBCardText>
-            <MDBCardText>
-            {article.price}
-            </MDBCardText>
-            <MDBCardText>
-            {article.depth} / {article.height} / {article.width}
-            </MDBCardText>
-            <MDBCardText>
-            {article.description}
-            </MDBCardText>
-            <MDBCardText>
-            {article.quantity}
-            </MDBCardText>
-            <MDBCardText>
+          <MDBCardBody style={{marginLeft:'6em'}}>
+            <MDBCardTitle style={{fontSize: '2em', textTransform: 'upperCase' }}>{article.name}</MDBCardTitle>
+            <MDBCardText></MDBCardText>
+            <MDBCardText style={{fontSize: '1.5em', fontWeight: 'bold' }}>{article.price}€</MDBCardText>
+            <MDBCardText style={{fontSize: '1em' }}><strong>Couleurs : </strong>{article.colors}</MDBCardText>
+            <MDBCardText style={{fontSize: '1em' }}><strong>Hauteur :</strong> {article.height} cm</MDBCardText>
+            <MDBCardText style={{fontSize: '1em' }}><strong>Largeur :</strong> {article.width} cm</MDBCardText>
+            <MDBCardText style={{fontSize: '1em' }}><strong>Profondeur :</strong> {article.depth} cm</MDBCardText>
+            <MDBCardText style={{fontSize: '1em' }}><strong>Type : </strong>{article.type}</MDBCardText>
+            <MDBCardText style={{fontSize: '1em' }}><strong>Description :</strong> {article.description}</MDBCardText>
+            <MDBCardText style={{fontSize: '1em' }}><strong>Quantité : </strong>{article.quantity}</MDBCardText>
+            <button type="button" class="btn btn-success"><BsFillBasket2Fill style={{ fontSize: "2em"}}  /></button>
+            {/* <MDBCardText>
               Bribri
-            </MDBCardText>
+            </MDBCardText> */}
           </MDBCardBody>
         </MDBCol>
       </MDBRow> 
