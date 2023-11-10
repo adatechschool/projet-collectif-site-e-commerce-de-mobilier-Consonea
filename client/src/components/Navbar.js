@@ -52,7 +52,7 @@ function NavigationBar( ) {
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
-              style={{ color: "#FEFAE0", backgroundColor: '#283618' }}
+              style={{ color: "#FEFAE0", backgroundColor: '#25402B' }}
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`} style={{ color: "#FEFAE0", fontFamily: "Impact" }}>
