@@ -65,13 +65,13 @@ function NavigationBar( ) {
                     Vendre un meuble
                   </Nav.Link>
                   {isAuthenticated === 0 && (
-                    <Nav.Link as={Link} to="/login" style={{ color: '#FEFAE0' }}>
+                    <Nav.Link as={Link} to="/login" style={{ color: '#FEFAE0', marginRight: "40px" }}>
                       Se connecter
                     </Nav.Link>
                   )}
 
                   {isAuthenticated === 1 && (
-                    <Nav.Link as={Link} to="/login" style={{ color: '#FEFAE0' }} onClick={logout}>
+                    <Nav.Link as={Link} to="/login" style={{ color: '#FEFAE0', marginRight: "40px" }} onClick={logout}>
                       Se déconnecter
                     </Nav.Link>
                   )}
