@@ -30,6 +30,7 @@ export default function UserInterface() {
                 <h2 className="mb-4">Votre meuble mérite bien une seconde vie. Mettez le en vente ici ! ♻️</h2>
                 {/* trouver comment ajouter un saut de ligne ou remonter le titre */}
             </div>
+
             <AddArticle />
             
             <div className="mt-5 mb-6">
@@ -38,9 +39,10 @@ export default function UserInterface() {
                 {articles.map(function (currentArticle) {
                     return <ListGroup.Item style={{backgroundColor:"#FEFAE0", border:"none"}}><Article propsArticle={currentArticle} /></ListGroup.Item>
                 })}
+
                 </ListGroup>
-            </div>
-            
+            </div> */}
+             
         </Container>
         </>
     )
