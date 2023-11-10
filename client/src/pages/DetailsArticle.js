@@ -29,14 +29,14 @@ function DetailsArticle({ useParams } ) {
     //on veux faire une boucle pour récupérer les données de l'api et leur appliquer le style de card pour qu'elles s'affichent
   const [article, setArticle] = useState({});
   console.log(useParams)
-const url = article.id
+
   // var requestOptions = {
   //   method: 'GET',
   //   redirect: 'follow'
   // };
   useEffect(() => {
     // Effectue une requête pour récupérer les articles depuis ta base de données
-    fetch(`http://localhost:5500/articles/${url}`) // remplacer l'ID dans l'URL (voir React router)
+    fetch("http://localhost:5500/articles/1") // remplacer l'ID dans l'URL (voir React router)
       .then(response => response.json())
       .then(data => setArticle(data))
       .catch(error => console.error('Erreur lors de la récupération des articles:', error));
