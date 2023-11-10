@@ -33,7 +33,7 @@ function DetailsArticle() {
   const [article, setArticle] = useState({});
   let {id} = useParams();
   console.log(useParams)
-let {id} = useParams();
+
   // var requestOptions = {
   //   method: 'GET',
   //   redirect: 'follow'
