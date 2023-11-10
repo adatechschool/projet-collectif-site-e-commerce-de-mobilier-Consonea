@@ -25,10 +25,13 @@ import Article from "../components/Article";
 // photo de l'article + infos + acheter l'article 
 
 
+
 function DetailsArticle() {
+
 
     //on veux faire une boucle pour récupérer les données de l'api et leur appliquer le style de card pour qu'elles s'affichent
   const [article, setArticle] = useState({});
+  let {id} = useParams();
   console.log(useParams)
 let {id} = useParams();
   // var requestOptions = {
@@ -51,6 +54,7 @@ let {id} = useParams();
           <MDBCardImage className='' style={{width:'auto', height:'auto', margin:'2em', borderRadius:'10px' }} src={tableBasse} alt='...' fluid />
         </MDBCol>
         <MDBCol md='8'>
+
           <MDBCardBody style={{marginLeft:'6em'}}>
             <MDBCardTitle style={{fontSize: '2em', textTransform: 'upperCase' }}>{article.name}</MDBCardTitle>
             <MDBCardText></MDBCardText>
@@ -63,9 +67,6 @@ let {id} = useParams();
             <MDBCardText style={{fontSize: '1em' }}><strong>Description :</strong> {article.description}</MDBCardText>
             <MDBCardText style={{fontSize: '1em' }}><strong>Quantité : </strong>{article.quantity}</MDBCardText>
             <button type="button" class="btn btn-success"><BsFillBasket2Fill style={{ fontSize: "2em"}}  /></button>
-            {/* <MDBCardText>
-              Bribri
-            </MDBCardText> */}
           </MDBCardBody>
         </MDBCol>
       </MDBRow> 
