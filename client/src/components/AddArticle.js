@@ -48,11 +48,13 @@ function AddArticle() {
         redirect: 'follow'
       };
       
-      fetch("http://localhost:5500/articles", requestOptions)
+      await fetch("http://localhost:5500/articles", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .then(console.log('got through fetch'))
         .catch(error => console.log('error', error));
+
+        
     } 
   return (
     <Form>
@@ -124,7 +126,7 @@ function AddArticle() {
           <Form.Control required type="textArea" onChange={handleInputChange} name="description" value={articleToAdd.description}/>
         </Form.Group>
       </Row>
-      <Button variant="success" className='mt-4' type="submit" onSubmit={handleSubmit}>Mettre en vente ! </Button>{' '}
+      <Button variant="success" className='mt-4' type="button" onClick={handleSubmit}>Mettre en vente ! </Button>{' '}
     </Form>
   );
 }
