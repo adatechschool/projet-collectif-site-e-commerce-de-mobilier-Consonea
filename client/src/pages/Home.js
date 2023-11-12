@@ -31,18 +31,17 @@ function Home() {
     <div className="Article">
       <h1 style={{ textAlign: "center" }}>Joli meuble cherche seconde vie.</h1>
 
-      <Container style={{ marginTop: "6em" }}>
-        <Row>
+      <Container style={{ marginTop: "6em", display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent:'flex-start'}}>
           
             {/* On utilise .map pour parcourir le tableau "articles" déclaré à la ligne 13, on déclare une fonction qui prend en parametre "currentArticle", 
           on lui demande de retourner le composant "Article" de Article.js, avec toutes ses caractéristiques, caractéristiques qui vont s'appliquer sur currentArticle. */}
             {/* Version raccourcie --> {articles.map(currentArticle => <Article propsArticle={currentArticle}/> )} */}
             {articles.map(function (currentArticle) {
-              return <Article propsArticle={currentArticle} />
+              // on filtre et affiche uniquement les articles qui ont un status de 1 (donc qui sont validés par l'admin & en vente)
+              if (currentArticle.status === 1)
+                return <Article propsArticle={currentArticle} />
             })
             }
-          
-        </Row>
       </Container>
 
     </div>
