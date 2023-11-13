@@ -3,10 +3,13 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { useState } from "react";
+import { useAuth } from '../context/auth';
 
 
 function AddArticle() {
       const [articleToAdd, setArticleToAdd] = useState({ name: "", type: "", colors: "", price: 0, height: 0, width: 0, depth: 0, description: "", status: 0, quantity: 0, user_id: 0});
+
+      const auth = useAuth();
 
       console.log('got through function addArticle')
 
@@ -21,6 +24,8 @@ function AddArticle() {
   
     const handleSubmit = async (e) => {
       e.preventDefault(); // Prevents the default form submission behavior
+
+      console.log(auth.user);
 
       let myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
@@ -38,7 +43,7 @@ function AddArticle() {
         "description": articleToAdd.description,
         "status": articleToAdd.status,
         "quantity":articleToAdd.quantity,
-        "user_id": JSON.parse(localStorage.getItem("user")).id,
+        "user_id": JSON.parse(auth.user).id,
       });
       
       var requestOptions = {

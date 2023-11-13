@@ -7,20 +7,21 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from "react-router-dom";
 import { BiSearch } from 'react-icons/bi';
 import { InputGroup } from 'react-bootstrap';
-import useAuth from "./useAuth";
+import { useAuth } from '../context/auth';
 import { default as Basket } from "../components/Basket";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
-function NavigationBar( ) {
+function NavigationBar() {
 
-  //création d'un state pour savoir si un utilisateur est connecté
-  const { logout, connectionStatus} = useAuth();
-  const [isAuthenticated, setIsAuthenticated] = useState(connectionStatus);
+  //Utilisation du contexte pour savoir si un utilisateur est connecté
+  const auth = useAuth();
 
-  useEffect(() => {
-    setIsAuthenticated(connectionStatus);
-  }, [connectionStatus]);
+  //création d'un state pour définir l'état du burger ouvert / fermé
+  const [show, setShow] = useState(false);
+  //fonctions pour modifier le jsx qui apparait quand on appuie sur le bouton
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
@@ -47,9 +48,11 @@ function NavigationBar( ) {
               </InputGroup>
             </Form>
 
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} style={{ color: "#FEFAE0", backgroundColor: '#FEFAE0' }} />
+            <Navbar.Toggle onClick={handleShow} aria-controls={`offcanvasNavbar-expand-${expand}`} style={{ color: "#FEFAE0", backgroundColor: '#FEFAE0' }} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
+              show={show}
+              onHide={handleClose}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
               style={{ color: "#FEFAE0", backgroundColor: '#25402B' }}
@@ -61,21 +64,24 @@ function NavigationBar( ) {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1">
-                  <Nav.Link as={Link} to="/profile" style={{ color: "#FEFAE0", marginRight: "40px" }}>
-                    Vendre un meuble
-                  </Nav.Link>
-                  {isAuthenticated === 0 && (
+                  {!auth.user && (
                     <Nav.Link as={Link} to="/login" style={{ color: '#FEFAE0', marginRight: "40px" }}>
                       Se connecter
                     </Nav.Link>
                   )}
 
-                  {isAuthenticated === 1 && (
-                    <Nav.Link as={Link} to="/login" style={{ color: '#FEFAE0', marginRight: "40px" }} onClick={logout}>
+                  {auth.user && (
+                    <Nav.Link as={Link} to="/login" style={{ color: '#FEFAE0', marginRight: "40px" }} onClick={auth.logout}>
                       Se déconnecter
                     </Nav.Link>
                   )}
-                  <Basket />
+
+                  <Nav.Link as={Link} to="/profile" style={{ color: "#FEFAE0", marginRight: "40px" }}>
+                    Vendre un meuble
+                  </Nav.Link>
+                  <Nav.Item style={{paddingTop:"0.5em", paddingBottom:"0.5em"}}>
+                    <Basket />
+                  </Nav.Item>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
