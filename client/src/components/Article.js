@@ -17,13 +17,12 @@ function Article({ propsArticle }) {
     width: '25rem',
     marginTop: '3rem',
     marginBottom: '4rem',
-    margin: '0.5rem',
+    margin: '1rem',
     fontFamily: 'Helvetica',
   };
 
   const url = `/article/${propsArticle.id}`
   return (
-    <Col>
     <Card style={cardStyle}>
       <Card.Img style={{ borderRadius: '22px 22px 0 0' }} src={tableBasse} />
       <Card.Body>
@@ -37,7 +36,6 @@ function Article({ propsArticle }) {
         <Button variant="success"><BsFillBasket2Fill style={{ fontSize: "1.2em"}}  /></Button>{' '}
       </Card.Body>
     </Card>
-</Col>
   );
 }
 

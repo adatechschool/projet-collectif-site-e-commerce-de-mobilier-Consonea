@@ -141,9 +141,9 @@ function Login() {
 
 
             <MDBInput wrapperClass='mb-4' label='Adresse Email' id='form1' type='email' name="email" value={dataToLogin.email}
-              onChange={handleInputChange} required />
-            <MDBInput wrapperClass='mb-4' label='Mot de Passe' id='form2' type='text' name="password" value={dataToLogin.password}
-              onChange={handleInputChange} required />
+              onChange={handleInputChange} required/>
+            <MDBInput wrapperClass='mb-4' label='Mot de Passe' id='form2' type='password' name="password" value={dataToLogin.password}
+              onChange={handleInputChange} required/>
 
             {/* <div className="d-flex justify-content-between mx-4 mb-4">
             <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Se souvenir de moi' />
