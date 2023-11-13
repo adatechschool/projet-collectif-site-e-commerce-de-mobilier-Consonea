@@ -12,7 +12,7 @@ function Basket() {
 
   return (
     <>
-      <Button onClick={handleShow} style={{backgroundColor: "#25402B",border:"none"}}>
+      <Button onClick={handleShow} style={{backgroundColor: "#25402B",border:"none", padding:"0 0 0 0"}}>
         {/* ici on utilise un composant déjà créé de la librairie react icons */}
         <BsFillBasket2Fill style={{ fontSize: "1.8em", color: "#FEFAE0" }} />
       </Button>

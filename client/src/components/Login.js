@@ -13,10 +13,10 @@ import {
 }
   from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
-import useAuth from "./useAuth";
+import { useAuth } from '../context/auth';
 
 function Login() {
-  const { login } = useAuth();
+  const auth = useAuth();
 
   //création d'un state pour définir l'état du jsx
   const [justifyActive, setJustifyActive] = useState('tab1');
@@ -94,8 +94,8 @@ function Login() {
     await fetch("http://localhost:5500/users/login", requestOptions)
       .then(response => response.json())
       .then(result => {
-        login(JSON.stringify(result));
-        navigate('/', { replace: true });
+        auth.login(JSON.stringify(result));
+        navigate('/');
       })
       .catch(error => {
         setLoginMessageError('Email ou mot de passe incorrect, veuillez réessayer.')
@@ -116,8 +116,8 @@ function Login() {
 
   return (
     <>
-      {loginMessageError !== '' && justifyActive === 'tab1' && <p style={{textAlign: 'center'}}>{loginMessageError}</p>}
-      {registerMessage !== '' && justifyActive === 'tab2' && <p style={{textAlign: 'center'}}>{registerMessage}</p>}
+      {loginMessageError !== '' && justifyActive === 'tab1' && <p style={{ textAlign: 'center' }}>{loginMessageError}</p>}
+      {registerMessage !== '' && justifyActive === 'tab2' && <p style={{ textAlign: 'center' }}>{registerMessage}</p>}
       <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
 
         <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between ' style={{
@@ -125,13 +125,12 @@ function Login() {
         }}>
           <MDBTabsItem>
             <MDBTabsLink onClick={() => handleJustifyClick('tab1')} active={justifyActive === 'tab1'}>
-              Se connecter
+              Déjà inscrit ?
             </MDBTabsLink>
           </MDBTabsItem>
           <MDBTabsItem>
             <MDBTabsLink onClick={() => handleJustifyClick('tab2')} active={justifyActive === 'tab2'}>
-
-              S'enregistrer
+              Créer un compte
             </MDBTabsLink>
           </MDBTabsItem>
         </MDBTabs>
@@ -142,9 +141,9 @@ function Login() {
 
 
             <MDBInput wrapperClass='mb-4' label='Adresse Email' id='form1' type='email' name="email" value={dataToLogin.email}
-              onChange={handleInputChange} required/>
+              onChange={handleInputChange} required />
             <MDBInput wrapperClass='mb-4' label='Mot de Passe' id='form2' type='text' name="password" value={dataToLogin.password}
-              onChange={handleInputChange} required/>
+              onChange={handleInputChange} required />
 
             {/* <div className="d-flex justify-content-between mx-4 mb-4">
             <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Se souvenir de moi' />
@@ -162,10 +161,10 @@ function Login() {
             <MDBInput ref={last_name_Ref} wrapperClass='mb-4' label='Nom' id='form1' type='text' required />
             <MDBInput ref={username_Ref} wrapperClass='mb-4' label='Pseudo' id='form1' type='text' required />
             <MDBInput ref={email_Ref} wrapperClass='mb-4' label='Email' id='form1' type='email' required />
-            <MDBInput ref={password_Ref} wrapperClass='mb-4' label='Mot de Passe' id='text' type='password' required/>
+            <MDBInput ref={password_Ref} wrapperClass='mb-4' label='Mot de Passe' id='text' type='password' required />
 
 
-            <MDBBtn onClick={handleRegister} style={{ backgroundColor: "#25402B", border: "none"}} className="mb-4 w-100">Valider l'inscription</MDBBtn>
+            <MDBBtn onClick={handleRegister} style={{ backgroundColor: "#25402B", border: "none" }} className="mb-4 w-100">Valider l'inscription</MDBBtn>
 
           </MDBTabsPane>
 

@@ -11,6 +11,7 @@ import AdminInterface from "./pages/AdminInterface";
 import LoginAdmin from "./pages/LoginAdmin";
 import UserInterface from "./pages/UserInterface";
 import LoginRegistration from "./pages/LoginRegistration";
+import { AuthProvider } from "./context/auth";
 
 //création racine du document html qu'on retrouve dans le dossier public sur index.html
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -19,14 +20,16 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 //on appelle le composant App qui est le composant React de base
 root.render(
   <BrowserRouter>
-    <App className='App'/>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/article/:id" element={<DetailsArticle />} />
-      <Route path="/admininterface" element={<AdminInterface />} />
-      <Route path="/loginadmin" element={<LoginAdmin />} />
-      <Route path="/login" element={<LoginRegistration />} />
-      <Route path="/profile" element={<UserInterface />} />
-    </Routes>
+    <AuthProvider>
+      <App className='App' />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/article/:id" element={<DetailsArticle />} />
+        <Route path="/admininterface" element={<AdminInterface />} />
+        <Route path="/loginadmin" element={<LoginAdmin />} />
+        <Route path="/login" element={<LoginRegistration />} />
+        <Route path="/profile" element={<UserInterface />} />
+      </Routes>
+    </AuthProvider>
   </BrowserRouter>
 );
