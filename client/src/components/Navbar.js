@@ -27,7 +27,7 @@ function NavigationBar() {
     <>
       {['lg'].map((expand) => (
         <Navbar key={expand} expand={expand} className="d-flex custom-navbar fixed-top mb-3">
-          <Container inline>
+          <Container inline="true">
             <Navbar.Brand
               as={Link}
               to="/"
