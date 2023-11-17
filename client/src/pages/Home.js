@@ -1,7 +1,6 @@
 import Article from "../components/Article";
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 //import de useState qui permet de mettre à jour automatiquement les données, c'est une sorte de mémoire temporaire pour stocker des valeurs qui peuvent changer au fil du temps.
 //useEffect nous permet ici de récupérer les données que l'API nous renvoie
 import React, { useState, useEffect } from 'react';
@@ -31,17 +30,17 @@ function Home() {
     <div className="Article">
       <h1 style={{ textAlign: "center" }}>Joli meuble cherche seconde vie.</h1>
 
-      <Container style={{ marginTop: "6em", display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent:'flex-start'}}>
-          
-            {/* On utilise .map pour parcourir le tableau "articles" déclaré à la ligne 13, on déclare une fonction qui prend en parametre "currentArticle", 
+      <Container style={{ marginTop: "6em", display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'flex-start' }}>
+
+        {/* On utilise .map pour parcourir le tableau "articles" déclaré à la ligne 13, on déclare une fonction qui prend en parametre "currentArticle", 
           on lui demande de retourner le composant "Article" de Article.js, avec toutes ses caractéristiques, caractéristiques qui vont s'appliquer sur currentArticle. */}
-            {/* Version raccourcie --> {articles.map(currentArticle => <Article propsArticle={currentArticle}/> )} */}
-            {articles.map(function (currentArticle) {
-              // on filtre et affiche uniquement les articles qui ont un status de 1 (donc qui sont validés par l'admin & en vente)
-              if (currentArticle.status === 1)
-                return <Article propsArticle={currentArticle} />
-            })
-            }
+        {/* Version raccourcie --> {articles.map(currentArticle => <Article propsArticle={currentArticle}/> )} */}
+        {articles.map((currentArticle) => {
+          // on filtre et affiche uniquement les articles qui ont un status de 1 (donc qui sont validés par l'admin & en vente)
+          if (currentArticle.status === 1) { return <Article propsArticle={currentArticle} /> }
+          return null;
+        })
+        }
       </Container>
 
     </div>
