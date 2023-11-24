@@ -56,7 +56,11 @@ Durée : 7 jours
 
 ### Setup back
 - cd Backend
-- create .env
+- create .env :
+DB_USER=root
+DB_PASSWORD=
+DB_DATABASE=consonea
+DB_PORT=3306
 - npm install
 
 ### Setup base de données 
