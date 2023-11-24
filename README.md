@@ -1,4 +1,4 @@
-#  Création d’un e-commerce de meubles - Consonea
+#  Création d’un site e-commerce de mobiliers - Consonea
 
 ## Repo côté Front
 
