@@ -1,6 +1,6 @@
-#  Création d’un e-commerce de meubles - Consonea
+#  Création d’un e-commerce de meubles - Consonea[color=#26B260]
 
-** Repo côté Front
+**Repo côté Front**
 
 ## Contexte - comité de pilotage
 
