@@ -49,18 +49,18 @@ Durée : 7 jours
 
 ### Setup global
 - npm install
+- create .env :
+DB_USER=root
+DB_PASSWORD=
+DB_DATABASE=consonea
+DB_PORT=3306
 
 ### Setup front
 - cd client
 - npm install
 
 ### Setup back
-- cd Backend
-- create .env :
-DB_USER=root
-DB_PASSWORD=
-DB_DATABASE=consonea
-DB_PORT=3306
+- cd ../Backend
 - npm install
 
 ### Setup base de données 
