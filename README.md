@@ -38,7 +38,7 @@ La charte graphique (Logo, couleurs, police) reflétait l’univers de l’harmo
 ### Les contraintes techniques
 Langage utilisé : libre et choisis en équipe. 
 - Côté Front : React / Bootstrap 
-- Côté Back : Mode.js / Express / SQL / mySql
+- Côté Back : Node.js / Express / SQL / mySql
 
 Durée : 7 jours
 
