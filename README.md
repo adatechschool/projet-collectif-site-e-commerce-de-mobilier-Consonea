@@ -19,7 +19,7 @@ Choix libre. Proposition faite par l’équipe Front de la première semaine qui
 ### Charte graphique 
 La charte graphique (Logo, couleurs, police) reflétait l’univers de l’harmonie, du calme et l’écologie. 
 
-### Design ergonomie 
+### Design et ergonomie 
 - Les éléments graphiques doivent respecter la charte graphique : couleurs, police permettant d’identifier la marque
 - L’interface utilisateur doit être optimisée UX et être responsive.
 - L’affichage du site doit être optimisé pour tous les navigateurs et toutes les devices
