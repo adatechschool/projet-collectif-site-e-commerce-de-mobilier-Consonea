@@ -1,4 +1,4 @@
-#  Création d’un e-commerce de meubles - <span style="color: #26B260">Consonea</span>
+#  Création d’un e-commerce de meubles - Consonea
 
 ## Repo côté Front
 
