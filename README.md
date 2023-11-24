@@ -40,6 +40,8 @@ Langage utilisé : libre et choisis en équipe.
 - Côté Front : React / Bootstrap 
 - Côté Back : Mode.js / Express / SQL / mySql
 
+Durée : 7 jours
+
 ## Organisation de travail 
  
 - Des points réguliers 
