@@ -35,7 +35,7 @@ La charte graphique (Logo, couleurs, police) reflétait l’univers de l’harmo
 - Espace pour l’administratrice du site 
 - Accès à la mise en vente de meuble
 
-### Les contraintes techniques
+### Stack
 Langage utilisé : libre et choisis en équipe. 
 - Côté Front : React / Bootstrap 
 - Côté Back : Node.js / Express / SQL / mySql
@@ -44,5 +44,33 @@ Durée : 7 jours
 
 ## Organisation de travail 
  
-- Des points réguliers 
-- Journal de bord
+- Stand up meetings
+- Journaux de bord
+
+## Configuration
+
+### Setup global
+- npm install
+
+### Setup front
+- cd client
+- npm install
+
+### Setup back
+- cd Backend
+- create .env
+- npm install
+
+### Setup base de données 
+- installer MySQL sur votre machine
+- mysqladmin -u root password 'votresupermotdepassetrescomplique'
+- mysql -u root -p Mot de passe root : ""
+- CREATE DATABASE consonea;
+- USE consonea;
+- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+- mysql -u root -p consonea < backend_bdd.sql
+
+## Déploiement
+- npm start
+
+

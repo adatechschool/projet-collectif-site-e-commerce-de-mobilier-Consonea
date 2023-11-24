@@ -1,5 +1,8 @@
 {
-  "dependencies": {
-    "mdb-react-ui-kit": "^6.3.0"
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "start": "concurrently \"node Backend/app.js\" \"cd client && PORT=4000 npm start\""
   }
 }
