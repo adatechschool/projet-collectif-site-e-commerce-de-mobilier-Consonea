@@ -72,7 +72,7 @@ DB_PORT=3306
 - ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
 - mysql -u root -p consonea < backend_bdd.sql
 
-## Déploiement
+## Lancement du server
 - npm start
 
 
