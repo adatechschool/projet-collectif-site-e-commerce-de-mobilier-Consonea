@@ -1,7 +1,5 @@
 #  Création d’un site e-commerce de mobiliers - Consonea
 
-## Repo côté Front
-
 ## Contexte - comité de pilotage
 
 Projet réalisé par 8 apprenants dans le cadre de notre formation à Ada Tech School : France Huon, Laure Saint-Antonin, Mahinthan Gugananthan, Mehdi Grimault, Myriam Le Nahelec, Nathan Pesneau, Paula Rondao, Quentin Kerzelec et Romane Boireau. 
@@ -58,7 +56,11 @@ Durée : 7 jours
 
 ### Setup back
 - cd Backend
-- create .env
+- create .env :
+DB_USER=root
+DB_PASSWORD=
+DB_DATABASE=consonea
+DB_PORT=3306
 - npm install
 
 ### Setup base de données 
